@@ -1,12 +1,12 @@
 import React from "react"
 import { IN_PROGRESS_TAG, UP_NEXT_TAG } from "../tags"
 
-const Item = ({id, text, tag}) => {
+const Item = ({id, text, tag, select, isSelected}, ref) => {
     return (
-        <div className="item">
+        <div className="item" ref={ref}>
             <div>
                 <div className="item--checkbox-wrapper">
-                    <input type="checkbox"/>
+                    <input type="checkbox" checked={isSelected} onChange={select}/>
                 </div>
                 <div className="item-content">
                     <div>{text}</div>
@@ -18,4 +18,4 @@ const Item = ({id, text, tag}) => {
     )
 }
 
-export { Item as default }
+export default React.forwardRef(Item)

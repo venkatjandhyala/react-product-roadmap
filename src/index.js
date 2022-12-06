@@ -4,6 +4,8 @@ import ProductRoadmap from "./components/ProductRoadmap"
 import "./index.css"
 
 ReactDOM.render(
-    <ProductRoadmap/>,
+    <React.StrictMode>
+        <ProductRoadmap/>
+    </React.StrictMode>,
     document.getElementById("root")
 )
